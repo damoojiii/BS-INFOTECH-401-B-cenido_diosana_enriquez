@@ -272,7 +272,9 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 .wrap-menu-desktop {
   position: fixed;
   z-index: 1100;
-  background-color: transparent;
+  background: #FF85F2;
+  background: -webkit-linear-gradient(45deg, #FF85F2, #EA2B90);
+  background: linear-gradient(45deg, #FF85F2, #EA2B90);
   width: 100%;
   height: 84px;
   top: 40px;
@@ -1783,10 +1785,8 @@ button.mfp-close {
 [ Num Product ]*/
 .wrap-num-product {
   width: 140px;
-  height: 45px;
   border: 1px solid #e6e6e6;
   border-radius: 3px;
-  overflow: hidden;
 }
 
 .btn-num-product-up,
@@ -2683,7 +2683,7 @@ input.num-product::-webkit-inner-spin-button {
 ==================================================================*/
 .bg-none {background-color: transparent;}
 .bg0 {background-color: #fff;}
-.bg1 {background-color: #717fe0;}
+.bg1 {background-color: #f848f3;}
 .bg2 {background-color: #e6e6e6;}
 .bg3 {background-color: #222;}
 .bg5 {background-color: rgba(0,0,0,0.5);}
@@ -3093,8 +3093,8 @@ input.num-product::-webkit-inner-spin-button {
 
 .hov-cl0:hover {color: #fff;}
 .hov-bg0:hover {background-color: #fff;}
-.hov-cl1:hover {color: #717fe0;}
-.hov-bg1:hover {background-color: #717fe0;}
+.hov-cl1:hover {color: #87CEEB;}
+.hov-bg1:hover {background-color: #87CEEB;}
 
 /*---------------------------------------------*/
 .hov-img0 {
@@ -3120,8 +3120,8 @@ input.num-product::-webkit-inner-spin-button {
 
 /*---------------------------------------------*/
 .hov-btn1:hover {
-  border-color: #222;
-  background-color: #222;
+  border-color: #EA2B90;
+  background-color: #EA2B90;
   color: #fff;
 }
 

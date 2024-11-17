@@ -270,17 +270,28 @@
     [ Show modal1 ]*/
     $(document).on('click', '.js-show-modal1', function (e) {
         e.preventDefault();
-    
+
+        const productID = $(this).data('product-id');
         const productName = $(this).data('product-name');
         const productPrice = $(this).data('product-price');
         const productDescription = $(this).data('product-description');
+        const productQuantity = $(this).data('product-quantity');
         const productImg = $(this).data('product-img');
-    
-        // Update the modal content
+        
         $('#modal-product-name').text(productName);
         $('#modal-product-price').text('PHP ' + productPrice);
         $('#modal-product-description').text(productDescription);
+        $('#modal-product-quantity').text(productQuantity);
         $('#modal-product-img').attr('src', productImg);
+        $('#modal-product-thumb').attr('data-thumb', productImg); // Set the data-thumb attribute
+        $('#modal-product-link').attr('href', productImg);
+        
+
+        const editUrl = editRouteTemplate.replace(':id', productID);
+        $('#modal-edit-button').attr('href', editUrl);
+        const deleteUrl = deleteRouteTemplate.replace(':id', productID);
+        $('#modal-delete-button').attr('action', deleteUrl);
+
     
         // Show the modal
         $('.js-modal1').addClass('show-modal1');

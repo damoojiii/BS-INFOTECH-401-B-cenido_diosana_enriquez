@@ -41,17 +41,16 @@
 					
 					<!-- Logo desktop -->		
 					<a href="#" class="logo">
-						<img src="" alt="IMG-LOGO">
-						<p>HATDOG</p>
+						<img src="{{asset('assets/images/logo.png')}}" alt="IMG-LOGO">
 					</a>	
 
 					<!-- Icon header -->
 					<div class="wrap-icon-header flex-w flex-r-m">
-						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
+						<div class="icon-header-item cl0 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
 							<i class="zmdi zmdi-search"></i>
 						</div>
 
-						<a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal2">
+						<a href="#" class="dis-block icon-header-item cl0 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal2">
 							<span class="lnr lnr-file-add"></span>
 						</a>
 					</div>
@@ -63,7 +62,7 @@
 		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
 			<div class="container-search-header">
 				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
-					<img src="images/icons/icon-close2.png" alt="CLOSE">
+					<img src="{{asset('assets/images/icons/icon-close.png')}}" alt="CLOSE">
 				</button>
 
 				<form class="wrap-search-header flex-w p-l-15">
@@ -75,23 +74,6 @@
 			</div>
 		</div>
 	</header>
-
-	<!-- Cart -->
-	<div class="wrap-header-cart js-panel-cart">
-		<div class="s-full js-hide-cart"></div>
-
-		<div class="header-cart flex-col-l p-l-65 p-r-25">
-			<div class="header-cart-title flex-w flex-sb-m p-b-8">
-				<span class="mtext-103 cl2">
-					Your Cart
-				</span>
-
-				<div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
-					<i class="zmdi zmdi-close"></i>
-				</div>
-			</div>
-		</div>
-	</div>
 
 	<!-- Product -->
 	<section class="bg0 mt-5 p-t-23 p-b-140">
@@ -119,6 +101,7 @@
 							data-product-name="{{ $products->product_name }}"
 							data-product-price="{{ $products->price }}"
 							data-product-description="{{ $products->description }}"
+							data-product-quantity="{{ $products->quantity }}"
 							data-product-img="{{ asset('storage/' . $products->img_path) }}">
 							Quick View
 							</a>
@@ -138,7 +121,7 @@
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
 									<img class="icon-heart1 dis-block trans-04" src="{{asset('assets/images/icons/icon-heart-01.png')}}" alt="ICON">
-									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="{{asset('assets/images/icons/icon-heart-02.png')}}" alt="ICON">
+									<img class="icon-heart2 dis-block trans-04 ab-t-l" src="{{asset('assets/images/icons/icon-heart-03.png')}}" alt="ICON">
 								</a>
 							</div>
 						</div>
@@ -147,12 +130,6 @@
 				@endforeach
 			</div>
 
-			<!-- Load more -->
-			<div class="flex-c-m flex-w w-full p-t-45">
-				<a href="#" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
-					Load More
-				</a>
-			</div>
 		</div>
 	</section>
 
@@ -190,11 +167,11 @@
 								<div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
 
 								<div class="slick3 gallery-lb">
-									<div class="item-slick3" data-thumb="">
+									<div class="item-slick3" data-thumb="" id="modal-product-thumb">
 										<div class="wrap-pic-w pos-relative">
 											<img id="modal-product-img" src="" alt="IMG-PRODUCT">
 
-											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="" id="modal-product-img">
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="" id="modal-product-link">
 												<i class="fa fa-expand"></i>
 											</a>
 										</div>
@@ -208,27 +185,27 @@
 						<div class="p-r-50 p-t-5 p-lr-0-lg">
 							<h4 id="modal-product-name" class="mtext-105 cl2 js-name-detail p-b-14"></h4>
 							<span id="modal-product-price" class="mtext-106 cl2"></span>
-							<p id="modal-product-description" class="stext-102 cl3 p-t-23"></p>
+							<div class="p-t-23">
+								<p>Product Detail:</p>
+								<p id="modal-product-description" class="stext-102 cl3"></p>
+								<P>Quantity: <span id="modal-product-quantity"></span></P>
+							</div>
+							
 							
 							<!--  -->
 							<div class="p-t-33">
 								<div class="flex-w flex-r-m p-b-10">
-									<div class="size-204 flex-w flex-m respon6-next">
-										<div class="wrap-num-product flex-w m-r-20 m-tb-10">
-											<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-												<i class="fs-16 zmdi zmdi-minus"></i>
-											</div>
-
-											<input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product" value="1">
-
-											<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-												<i class="fs-16 zmdi zmdi-plus"></i>
-											</div>
-										</div>
-
-										<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
-											Add to cart
-										</button>
+									<div class="size-204 flex-w flex-r-m respon6-next" @style('gap: 10px;')>
+										<a href="" id="modal-edit-button" class="flex-c-m stext-101 cl0 size-104 bg1 bor1 hov-btn1 p-lr-15 trans-04">
+											<span class="lnr lnr-pencil"></span>
+										</a>
+										<form method="POST" action="" id="modal-delete-button" enctype="multipart/form-data">
+											<input type="hidden" name="_method" value="DELETE">
+											<input type="hidden" name="_token" value="{{csrf_token()}}">
+											<button type="submit" class="flex-c-m stext-101 cl0 size-104 bg1 bor1 hov-btn1 p-lr-15 trans-04">
+												<span class="lnr lnr-trash"></span>
+											</button>
+										</form>
 									</div>
 								</div>	
 							</div>
@@ -387,8 +364,14 @@
         </script>
     <!--===============================================================================================-->
         <script src="{{asset('assets/js/main.js')}}"></script>
+	
 
     <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+
+	<script>
+		const editRouteTemplate = "{{ route('product.edit', ':id') }}";
+		const deleteRouteTemplate = "{{ route('product.destroy', ':id') }}";
+	</script>	
 </body>
 </html>

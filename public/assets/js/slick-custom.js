@@ -160,7 +160,12 @@
                 dotsClass:'slick3-dots',
                 customPaging: function(slick, index) {
                     var portrait = $(slick.$slides[index]).data('thumb');
-                    return '<img src=" ' + portrait + ' "/><div class="slick3-dot-overlay"></div>';
+                    if (portrait) {
+                      return `<img src="${portrait}" alt="thumb"/><div class="slick3-dot-overlay"></div>`;
+                  } else {
+                      console.error(`Data-thumb not found for slide index ${index}`);
+                      return '<div class="slick3-dot-overlay"></div>';
+                  }
                 },  
             });
         });
