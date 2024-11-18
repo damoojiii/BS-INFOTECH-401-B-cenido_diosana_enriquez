@@ -221,63 +221,18 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 
-/*==================================================================
-[ Top bar ]*/
-.top-bar {
-  height: 40px;
-  background-color: #222;
-}
-
-/*---------------------------------------------*/
-.left-top-bar {
-  font-family: Poppins-Regular;
-  font-size: 12px;
-  line-height: 1.8;
-  color: #b2b2b2;
-}
-
-
-/*---------------------------------------------*/
-.right-top-bar a {
-  font-family: Poppins-Regular;
-  font-size: 12px;
-  line-height: 1.8;
-
-  height: 100%;
-  color: #b2b2b2;
-  border-right: 1px solid rgba(255,255,255,0.3);
-}
-
-.right-top-bar a:first-child {
-  border-left: 1px solid rgba(255,255,255,0.3);
-}
-
-.right-top-bar a:hover {
-  color: #6c7ae0;
-}
-
-
-/*---------------------------------------------*/
-.topbar-mobile li {
-  padding: 8px 20px;
-  border-top: 1px solid rgba(255,255,255,0.05);
-  background-color: #222;
-}
-
-
 
 /*==================================================================
 [ Menu ]*/
 
 .wrap-menu-desktop {
-  position: fixed;
+  position: -webkit-sticky;
   z-index: 1100;
   background: #FF85F2;
   background: -webkit-linear-gradient(45deg, #FF85F2, #EA2B90);
   background: linear-gradient(45deg, #FF85F2, #EA2B90);
   width: 100%;
   height: 84px;
-  top: 40px;
   left: 0px; 
 
   -webkit-transition: height 0.3s, background-color 0.3s;
@@ -616,7 +571,6 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 [ Fixed menu desktop ]*/
 
 .fix-menu-desktop .wrap-menu-desktop {
-  height: 70px;
   background-color: rgba(255,255,255,1);
   box-shadow: 0 0px 3px 0px rgba(0,0,0,0.2);
   -moz-box-shadow: 0 0px 3px 0px rgba(0,0,0,0.2);
@@ -626,7 +580,6 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .header-v2 .fix-menu-desktop.container-menu-desktop {
-  height: 70px;
 }
 
 .header-v3 .fix-menu-desktop .wrap-menu-desktop {
@@ -635,7 +588,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .header-v4 .fix-menu-desktop.container-menu-desktop {
-  height: 110px;
+  
 }
 
 /*---------------------------------------------*/
@@ -3138,8 +3091,8 @@ input.num-product::-webkit-inner-spin-button {
 
 /*---------------------------------------------*/
 .hov-btn3:hover {
-  border-color: #717fe0;
-  background-color: #717fe0;
+  border-color: #222;
+  background-color: #222;
   color: #fff;
 }
 

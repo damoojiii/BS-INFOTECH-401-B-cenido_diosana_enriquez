@@ -49,8 +49,8 @@
 	</header>
 
 	<!-- Product -->
-	<section class="bg0 mt-5 p-t-23 p-b-140">
-		<div class="container mt-5">
+	<section class="bg0 mt-3 p-t-23 p-b-140">
+		<div class="container">
 			<div class="row justify-content-center">
                 <div class="col-md-8 p-b-30">
                     <form class="p-l-25 p-r-30 p-lr-0-lg" method="POST" action="{{route('product.update', $product->id)}}" enctype="multipart/form-data">
@@ -91,15 +91,14 @@
                         </div>
 
                         <!-- Submit Button -->
-                        <div class="size-204 p-t-20">
+                        <div class="size-204 p-t-20 d-flex justify-content-start" style="gap: 10px;">
                             <button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04" type="submit">
                                 Edit Product
                             </button>
-                            <a href="{{route('product.index')}}" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04" >
+                            <a href="{{ route('product.index') }}" class="flex-c-m stext-101 cl0 size-101 bg7 bor1 hov-btn3 p-lr-15 trans-04">
                                 Cancel
                             </a>
-                        </div>
-                        
+                        </div>                        
                     </form>
                 </div>
             </div>
