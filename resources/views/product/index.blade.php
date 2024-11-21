@@ -192,9 +192,11 @@
 							<h4 id="modal-product-name" class="mtext-105 cl2 js-name-detail p-b-14"></h4>
 							<span id="modal-product-price" class="mtext-106 cl2"></span>
 							<div class="p-t-23">
-								<p>Product Detail:</p>
+								<strong><p>Product Detail:</p></strong>
 								<p id="modal-product-description" class="stext-102 cl3"></p>
-								<P>Quantity: <span id="modal-product-quantity"></span></P>
+								<div class="mt-3">
+									<strong><p>Quantity:</strong> <span id="modal-product-quantity"></span></p>
+								</div>
 							</div>
 							
 							
