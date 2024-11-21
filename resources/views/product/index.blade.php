@@ -79,7 +79,7 @@
 	<section class="bg0 mt-3 p-t-23 p-b-140">
 		<div class="container">
 			@if (session('success'))
-				<div class="alert alert-success">{{session('success')}}</div>
+				<div class="alert alert-success alert-dismissible fade show" role="alert" >{{session('success')}}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>
 			@endif
 			<div class="p-b-10">
 				<h3 class="ltext-103 cl5">
@@ -89,7 +89,7 @@
 
 			<div class="row isotope-grid mt-4">
 				@if($product->isEmpty())
-					<div class="col-12 text-center p-t-40">
+					<div class="col-12 text-center p-t-40 m-b-120">
 						<p class="stext-102 cl3">No products added yet.</p>
 					</div>
 				@else
@@ -138,14 +138,6 @@
 			
 		</div>
 	</section>
-
-
-	<!-- Footer -->
-	<footer class="bg3 p-t-75 p-b-32">
-		<div class="container">
-			
-		</div>
-	</footer>
 
 
 	<!-- Back to top -->
